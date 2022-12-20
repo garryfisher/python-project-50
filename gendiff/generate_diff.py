@@ -8,17 +8,17 @@ IS_FILES = "  "
 # in_file2 = json.load(open('/home/gennady/python-project-50/files/file2.json'))
 
 
-_file1 = {
-  "host": "hexlet.io",
-  "timeout": '50',
-  "proxy": "123.234.53.22",
-  "follow": 'false'
-}
-_file2 = {
-  "timeout": '20',
-  "verbose": 'true',
-  "host": "hexlet.io"
-}
+# _file1 = {
+#   "host": "hexlet.io",
+#   "timeout": '50',
+#   "proxy": "123.234.53.22",
+#   "follow": 'false'
+# }
+# _file2 = {
+#   "timeout": '20',
+#   "verbose": 'true',
+#   "host": "hexlet.io"
+# }
 
 
 def generate_diff(first_file, second_file):
@@ -37,7 +37,4 @@ def generate_diff(first_file, second_file):
             else:
                 result[f'{IS_FILE1}{x}'] = file1[x]
                 result[f'{IS_FILE2}{x}'] = file2[x]
-    print(result)
-
-
-generate_diff(_file1, _file2)
+    return result
