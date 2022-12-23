@@ -10,7 +10,18 @@ def get_file(path_to_file):
         return file.read()
 
 
-def generate_diff(dir1, dir2):
+def get_dir(file):
+    file = str(file)
+    name, formats = file.split('.')
+    if formats == 'json' and name == 'file1':
+        return './files/file1.json'
+    if formats == 'json' and name == 'file2':
+        return './files/file2.json'
+
+
+def generate_diff(in_1, in_2):
+    dir1 = get_dir(in_1)
+    dir2 = get_dir(in_2)
     file1 = dict(sorted(json.loads(get_file(dir1)).items()))
     file2 = dict(sorted(json.loads(get_file(dir2)).items()))
     all_keys = sorted(set(file1) | set(file2))
