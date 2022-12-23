@@ -17,14 +17,14 @@ def generate_diff(dir1, dir2):
     result = '{\n'
     for x in all_keys:
         if x not in file2:
-            result += IN_FILE1 + x + ': ' + str(file1[x]) + '\n'
+            result += f'{IN_FILE1}{x}: {file1[x]}' + '\n'
         elif x not in file1:
-            result += IN_FILE2 + x + ': ' + str(file2[x]) + '\n'
+            result += f'{IN_FILE2}{x}: {file2[x]}' + '\n'
         elif x in file1 and file2:
             if file1[x] == file2[x]:
-                result += IN_FILES + x + ': ' + str(file2[x]) + '\n'
+                result += f'{IN_FILES}{x}: {file2[x]}' + '\n'
             else:
-                result += IN_FILE1 + x + ': ' + str(file1[x]) + '\n'
-                result += IN_FILE2 + x + ': ' + str(file2[x]) + '\n'
+                result += f'{IN_FILE1}{x}: {file1[x]}' + '\n'
+                result += f'{IN_FILE2}{x}: {file2[x]}' + '\n'
     result += '}'
     return result
