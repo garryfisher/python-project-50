@@ -3,10 +3,10 @@ import argparse
 
 def argparser():
     parser = argparse.ArgumentParser(
-                    prog='gendiff',
-                    description='Compares two configuration'
-                                ' files and shows a difference.',
-                    )
+        prog='gendiff',
+        description='Compares two configuration'
+                    'files and shows a difference.'
+    )
     parser.add_argument(
         'first_file', type=str,
         help='first argument', default='file1'
