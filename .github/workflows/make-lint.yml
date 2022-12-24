@@ -6,23 +6,16 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: install dependencies
-        run: |
+      - run: |
           pip install poetry flake8 pytest
           make install
-      - name: build
-        run: make build
-      - name: upgrade pip
-        run: python3 -m pip install --upgrade pip
-      - name: package-install
-        run: python3 -m pip install --force dist/*.whl
-      - name: make lint
-        run: make lint
-      - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v3.2.0
-        if: github.ref_name == 'main'
+      - run: make build
+      - run: python3 -m pip install --upgrade pip
+      - run: python3 -m pip install --force dist/*.whl
+      - run: make lint
+      - uses: paambaati/codeclimate-action@v3.2.0
         env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          CC_TEST_REPORTER_ID: 4729615fc6f6b4ba6a58327f85b453e467db031fff46c951dee2ec2f4ed4ebc9
         with:
           coverageCommand: make test-coverage
           debug: true
