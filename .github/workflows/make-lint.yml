@@ -14,9 +14,3 @@ jobs:
       - run: python3 -m pip install --force dist/*.whl
       - run: python3 -m pip install flake8
       - run: make lint
-      - uses: paambaati/codeclimate-action@v3.2.0
-        env:
-          CC_TEST_REPORTER_ID: 4729615fc6f6b4ba6a58327f85b453e467db031fff46c951dee2ec2f4ed4ebc9
-        with:
-          coverageCommand: make test-coverage
-          debug: true
