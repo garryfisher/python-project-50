@@ -1,3 +1,8 @@
+"""
+Используется в качестве черновика
+"""
+
+
 def get_dir(file):
     file = str(file)
     name, formats = file.split('.')
