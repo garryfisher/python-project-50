@@ -1,7 +1,7 @@
 import json
-IN_FILE1 = "- "
-IN_FILE2 = "+ "
-IN_FILES = "  "
+IN_FILE1 = "  - "
+IN_FILE2 = "  + "
+IN_FILES = "    "
 
 
 
