@@ -1,7 +1,5 @@
 name: linter
 on: push
-env:
-  PYTHON_KEYRING_BACKEND: keyring.backends.null.Keyring
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,14 +18,11 @@ jobs:
         run: python3 -m pip install --force dist/*.whl
       - name: make lint
         run: make lint
-      - name: Run test
-        run: make test
-      - name: pytest-cov
-        run: make pytest-cov
-      - name: test coverage
-        uses: paambaati/codeclimate-action@v3.0.0
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v3.2.0
+        if: github.ref_name == 'main'
         env:
-          CC_TEST_REPORTER_ID: d4487df68bc74f878059cad0940fc6807db028824ce4deec41d76d16e835da4a
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: make test-coverage
           debug: true
