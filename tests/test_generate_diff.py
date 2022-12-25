@@ -1,15 +1,15 @@
 from os import path
 from gendiff.generate_diff import generate_diff
+import json
 
 file1 = path.join(path.dirname("./tests/fixtures/"),
-                  "file1.json")
+                  "test_file1.json")
 file2 = path.join(path.dirname("./tests/fixtures/"),
-                  "file2.json")
+                  "test_file2.json")
 result_type_str = str(path.join(path.dirname("./tests/fixtures/"),
-                                "result_json.txt"))
+                                "test_result_json.txt"))
 
-
-# print(generate_diff(file1, file2))
+# print(json.load(open(file1, 'r')))
 
 
 def test_generate_diff():
