@@ -6,4 +6,4 @@
 <a href="https://codeclimate.com/github/garryfisher/python-project-50/test_coverage"><img src="https://api.codeclimate.com/v1/badges/df0c9295986e60cf71d0/test_coverage" /></a>
 
 <h3>Run programm</h3>
-<a href="https://asciinema.org/a/tEKZlrQX0zuxidpBsrmaoSfS7" target="_blank"><img src="https://asciinema.org/a/tEKZlrQX0zuxidpBsrmaoSfS7.svg" /></a>
+<a href="https://asciinema.org/a/ADM8hqMJkrRP0mfBwIE7xY8bQ" target="_blank"><img src="https://asciinema.org/a/ADM8hqMJkrRP0mfBwIE7xY8bQ.svg" /></a>
