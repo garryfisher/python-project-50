@@ -1,28 +1,24 @@
 import json
+import os
 IN_FILE1 = "  - "
 IN_FILE2 = "  + "
 IN_FILES = "    "
 
 
+def get_format(data, formats):
+    if formats == ".json":
+        return json.load(data)
+
+
 def get_file(path_to_file):
-    with open(path_to_file, 'r') as file:
-        return file.read()
+    name, formats = os.path.splitext(os.path.normpath(path_to_file))
+    with open(path_to_file) as file:
+        return get_format(file, formats)
 
 
-def get_dir(file):
-    file = str(file)
-    name, formats = file.split('.')
-    if formats == 'json' and name == 'file1':
-        return './files/file1.json'
-    if formats == 'json' and name == 'file2':
-        return './files/file2.json'
-
-
-def generate_diff(in_1, in_2):
-    dir1 = get_dir(in_1)
-    dir2 = get_dir(in_2)
-    file1 = dict(sorted(json.loads(get_file(dir1)).items()))
-    file2 = dict(sorted(json.loads(get_file(dir2)).items()))
+def generate_diff(path_to_file1, path_to_file2):
+    file1 = dict(sorted(get_file(path_to_file1).items()))
+    file2 = dict(sorted(get_file(path_to_file2).items()))
     all_keys = sorted(set(file1) | set(file2))
     result = '{\n'
     for x in all_keys:
