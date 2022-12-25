@@ -1,13 +1,18 @@
 import json
+import yaml
 import os
+
+
 IN_FILE1 = "  - "
 IN_FILE2 = "  + "
 IN_FILES = "    "
 
 
-def get_format(data, formats):
+def get_format(in_, formats):
     if formats == ".json":
-        return json.load(data)
+        return json.load(in_)
+    if formats == ".yml" or formats == ".yaml":
+        return yaml.load(in_)
 
 
 def get_file(path_to_file):
