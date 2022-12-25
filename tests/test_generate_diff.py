@@ -14,4 +14,4 @@ result_type_str = str(path.join(path.dirname("./tests/fixtures/"),
 
 def test_generate_diff():
     with open(result_type_str) as result:
-        assert generate_diff(file1, file2) != result.read()
+        assert generate_diff(file1, file2) == result.read()
