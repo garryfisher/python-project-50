@@ -12,7 +12,7 @@ def get_format(in_, formats):
     if formats == ".json":
         return json.load(in_)
     if formats == ".yml" or formats == ".yaml":
-        return yaml.load(in_)
+        return yaml.safe_load(in_)
 
 
 def get_file(path_to_file):
