@@ -23,4 +23,4 @@ pytest-cov:
 	pip install pytest-cov
 
 test-coverage:
-	poetry run pytest --cov
+	poetry run pytest --cov --cov-report xml
