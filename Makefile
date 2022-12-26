@@ -19,5 +19,8 @@ gendiff:
 test:
 	poetry run pytest
 
+pytest-cov:
+	pip install pytest-cov
+
 test-coverage:
 	poetry run pytest --cov
