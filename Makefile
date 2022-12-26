@@ -18,3 +18,6 @@ gendiff:
 
 test:
 	poetry run pytest
+
+test-coverage:
+	poetry run pytest --cov=python-project-50 --cov-report xml
