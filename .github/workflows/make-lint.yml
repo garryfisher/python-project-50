@@ -13,6 +13,7 @@ jobs:
       - run: python3 -m pip install --upgrade pip
       - run: python3 -m pip install --force dist/*.whl
       - run: python3 -m pip install flake8
+      - run: python3 -m pip install pytest-cov
       - run: make lint
       - run: make test
       - name: Test & publish code coverage
