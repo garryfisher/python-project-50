@@ -15,3 +15,11 @@ jobs:
       - run: python3 -m pip install flake8
       - run: make lint
       - run: make test
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v3.2.0
+        if: github.ref_name == 'main'
+        env:
+          CC_TEST_REPORTER_ID: ${{ CODECLIMAT_PROJECT_50 }}
+        with:
+          coverageCommand: make test-coverage
+          debug: true
