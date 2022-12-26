@@ -16,11 +16,12 @@ jobs:
       - run: python3 -m pip install pytest-cov
       - run: make lint
       - run: make test
+      - run: make pytest-cov
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.2.0
         if: github.ref_name == 'main'
         env:
-          CC_TEST_REPORTER_ID: ${{ CODECLIMAT_PROJECT_50 }}
+          CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMAT_PROJECT_50 }}
         with:
           coverageCommand: make test-coverage
           debug: true
