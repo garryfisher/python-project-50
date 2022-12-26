@@ -12,7 +12,6 @@ jobs:
       - run: make build
       - run: python3 -m pip install --upgrade pip
       - run: python3 -m pip install --force dist/*.whl
-      - run: python3 -m pip install flake8
       - run: python3 -m pip install pytest-cov
       - run: make lint
       - run: make test
@@ -21,7 +20,7 @@ jobs:
         uses: paambaati/codeclimate-action@v3.2.0
         if: github.ref_name == 'main'
         env:
-          CC_TEST_REPORTER_ID: 4729615fc6f6b4ba6a58327f85b453e467db031fff46c951dee2ec2f4ed4ebc9
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: make test-coverage
           debug: true
