@@ -3,13 +3,11 @@
 """
 
 
-def get_dir(file):
-    file = str(file)
-    name, formats = file.split('.')
-    if formats == 'json' and name == 'file1':
-        return './files/file1.json'
-    if formats == 'json' and name == 'file2':
-        return './files/file2.json'
+def flatten(item):
+    result = []
+    for i in item:
+        result += flatten(i) if isinstance(i, (list, tuple, set, )) else [i]
 
+    return result
 
-print(get_dir('file1.json'))
+print(flatten([1, (2, 3), [4, 5], [], {6, 7, 8},]))

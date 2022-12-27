@@ -25,9 +25,9 @@ def get_file(path_to_file):
 
 
 def generate_diff(path_to_file1, path_to_file2):
-    file1 = dict(sorted(get_file(path_to_file1).items()))
-    file2 = dict(sorted(get_file(path_to_file2).items()))
-    all_keys = sorted(set(file1) | set(file2))
+    file1 = get_file(path_to_file1)
+    file2 = get_file(path_to_file2)
+    all_keys = sorted(set(file1.keys()) | set(file2.keys()))
     result = OPENING_BRACKET + END_STRING
     for x in all_keys:
         if x not in file2:
