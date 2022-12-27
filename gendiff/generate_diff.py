@@ -3,9 +3,12 @@ import yaml
 import os
 
 
-IN_FILE1 = "  - "
-IN_FILE2 = "  + "
-IN_FILES = "    "
+OPENING_BRACKET = '{'
+CLOSING_BRACKET = '}'
+DEL = "  - "
+ADD = "  + "
+SPACE = "    "
+END_STRING = '\n'
 
 
 def get_format(in_, formats):
@@ -25,17 +28,17 @@ def generate_diff(path_to_file1, path_to_file2):
     file1 = dict(sorted(get_file(path_to_file1).items()))
     file2 = dict(sorted(get_file(path_to_file2).items()))
     all_keys = sorted(set(file1) | set(file2))
-    result = '{\n'
+    result = OPENING_BRACKET + END_STRING
     for x in all_keys:
         if x not in file2:
-            result += f'{IN_FILE1}{x}: {file1[x]}' + '\n'
+            result += f'{DEL}{x}: {file1[x]}' + END_STRING
         elif x not in file1:
-            result += f'{IN_FILE2}{x}: {file2[x]}' + '\n'
+            result += f'{ADD}{x}: {file2[x]}' + END_STRING
         elif x in file1 and file2:
             if file1[x] == file2[x]:
-                result += f'{IN_FILES}{x}: {file2[x]}' + '\n'
+                result += f'{SPACE}{x}: {file2[x]}' + END_STRING
             else:
-                result += f'{IN_FILE1}{x}: {file1[x]}' + '\n'
-                result += f'{IN_FILE2}{x}: {file2[x]}' + '\n'
-    result += '}'
+                result += f'{DEL}{x}: {file1[x]}' + END_STRING
+                result += f'{ADD}{x}: {file2[x]}' + END_STRING
+    result += CLOSING_BRACKET
     return result
