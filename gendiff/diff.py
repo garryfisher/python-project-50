@@ -21,10 +21,10 @@ def get_diff(file1, file2):
             )
         elif cur_value1 == cur_value2:
             diff_list.append(get_element(key, cur_value1, 'no_changed'))
-        elif cur_value1 == 'key_no_found':
-            diff_list.append(get_element(key, cur_value2, 'deleted'))
         elif cur_value2 == 'key_no_found':
-            diff_list.append(get_element(key, cur_value1, 'added'))
+            diff_list.append(get_element(key, cur_value1, 'deleted'))
+        elif cur_value1 == 'key_no_found':
+            diff_list.append(get_element(key, cur_value2, 'added'))
         else:
             diff_list.append(
                 get_element(key, (cur_value1, cur_value2), 'update')
