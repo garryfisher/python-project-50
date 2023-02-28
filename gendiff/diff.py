@@ -26,6 +26,5 @@ def get_diff(file1, file2):
             diff_list.append(
                 get_element(key, (cur_value1, cur_value2), 'updated')
             )
-    #print(diff_list)
 
     return diff_list

@@ -22,7 +22,7 @@ def get_readability(raw_data, depth):
         result = raw_data
     elif isinstance(raw_data, dict):
         result = f'{OPEN_BRACKET}{END}'
-        result += get_tree(raw_data, depth+1)
+        result += get_tree(raw_data, depth + 1)
         result += f'{get_indent(depth)}{CLOSE_BRACKET}'
     elif isinstance(raw_data, tuple):
         result = (get_readability(raw_data[0], depth),

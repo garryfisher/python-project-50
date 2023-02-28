@@ -21,14 +21,14 @@ result_tree_json_str = str(path.join(path.dirname("./tests/fixtures/"),
 
 def test_generate_diff_json():
     with open(result_type_str) as result:
-        assert generate_diff(file1_json, file2_json) == result.read()
+        assert generate_diff(file1_json, file2_json, 'stylish') == result.read()
 
 
 def test_generate_diff_yml():
     with open(result_type_str) as result:
-        assert generate_diff(file1_yml, file2_yml) == result.read()
+        assert generate_diff(file1_yml, file2_yml, 'stylish') == result.read()
 
 
-# def test_generate_diff_tree_json():
-#     with open(result_tree_json_str) as result:
-#         assert generate_diff(file1_tree_json, file2_tree_json) == result.read()
+def test_generate_diff_tree_json():
+    with open(result_tree_json_str) as result:
+        assert generate_diff(file1_tree_json, file2_tree_json, 'stylish') == result.read()
