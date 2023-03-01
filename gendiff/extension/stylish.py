@@ -11,9 +11,9 @@ END = '\n'
 def get_indent(depth, mode='skip'):
     if mode == 'skip':
         return SPACE * depth
-    elif mode == "add":
+    elif mode == 'add':
         return SPACE * (depth - 1) + ADD
-    elif mode == "del":
+    elif mode == 'del':
         return SPACE * (depth - 1) + DEL
 
 
@@ -36,9 +36,9 @@ def get_readability(raw_data, depth):
 def get_tree(value, depth=0):
     tree = ''
     for tree_key, tree_value in value.items():
-        if isinstance(tree_key, dict):
+        if isinstance(tree_value, dict):
             tree += f'{get_indent(depth)}{tree_key}: {OPEN_BRACKET}{END}'
-            tree += f'{get_tree(tree_value, depth+1)}'
+            tree += f'{get_tree(tree_value, depth + 1)}'
             tree += f'{get_indent(depth)}{CLOSE_BRACKET}{END}'
         else:
             tree_value = json.dumps(tree_value).strip('"')
