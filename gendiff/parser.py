@@ -5,7 +5,7 @@ import yaml
 def load_data(data):
     if data.endswith('.json'):
         loader = json.load
-    elif data.endswith('.yaml', '.yml'):
+    elif data.endswith(('.yaml', '.yml')):
         loader = yaml.safe_load
     else:
         raise Exception('Unsupported file format')

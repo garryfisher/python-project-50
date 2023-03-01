@@ -6,22 +6,20 @@ from gendiff.generate_diff import generate_diff
 
 def main():
     parser = argparse.ArgumentParser(
-        prog='gendiff',
-        description='Compares two configuration'
-                    'files and shows a difference.'
+        prog="gendiff",
+        description="Compares two configuration"
+                    "files and shows a difference."
     )
     parser.add_argument(
-        'first_file', type=str,
-        help='first argument', default='None'
-    )
+        "first_file", type=str,
+        help="first argument")
     parser.add_argument(
-        'second_file', type=str,
-        help='second argument', default='None'
-    )
+        "second_file", type=str,
+        help="second argument")
     parser.add_argument(
-        '-f',
-        '--format', default='stylish',
-        help='set format of output')
+        "-f",
+        "--format", default="stylish",
+        help="set format of output")
     args = parser.parse_args()
 
     print(generate_diff(args.first_file, args.second_file))

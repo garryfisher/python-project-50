@@ -1,7 +1,7 @@
 def get_element(key, value, operation):
     return {
-        'key': key,
-        'value': value,
+        "key": key,
+        "value": value,
         'operation': operation
     }
 
