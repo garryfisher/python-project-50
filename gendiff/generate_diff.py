@@ -1,17 +1,19 @@
 from gendiff.diff import get_diff
-from gendiff.parse import load_content
-from gendiff.format import stylish_format, plain_format, json_format
+from gendiff.parser import loading
+from gendiff.extension.stylish import get_stylish
+from gendiff.extension.plain import get_plain
+from gendiff.extension.json import get_json
+
 
 FORMATS = {
-    "stylish": stylish_format,
-    "plain": plain_format,
-    "json": json_format
+    'stylish': get_stylish,
+    'plain': get_plain,
+    'json': get_json,
 }
 
 
-def generate_diff(file_path1, file_path2, format_name="stylish"):
-    formatter = FORMATS[format_name]
-    return formatter(get_diff(
-        load_content(file_path1),
-        load_content(file_path2)))
+def generate_diff(path_to_file1, path_to_file2, format_type="stylish"):
+    formatter = FORMATS[format_type]
 
+    return formatter(get_diff(loading(path_to_file1),
+                              loading(path_to_file2)))
