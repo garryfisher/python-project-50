@@ -1,57 +1,57 @@
 {
   "common": {
-    "action": "nested",
+    "operation": "children",
     "value": {
       "follow": {
-        "action": "added",
+        "operation": "added",
         "value": false
       },
       "setting1": {
-        "action": "unchanged",
+        "operation": "no_changed",
         "value": "Value 1"
       },
       "setting2": {
-        "action": "deleted",
+        "operation": "deleted",
         "value": 200
       },
       "setting3": {
-        "action": "updated",
+        "operation": "updated",
         "value": {
-          "old entry": true,
-          "new entry": null
+          "old": true,
+          "new": null
         }
       },
       "setting4": {
-        "action": "added",
+        "operation": "added",
         "value": "blah blah"
       },
       "setting5": {
-        "action": "added",
+        "operation": "added",
         "value": {
           "key5": "value5"
         }
       },
       "setting6": {
-        "action": "nested",
+        "operation": "children",
         "value": {
           "doge": {
-            "action": "nested",
+            "operation": "children",
             "value": {
               "wow": {
-                "action": "updated",
+                "operation": "updated",
                 "value": {
-                  "old entry": "",
-                  "new entry": "so much"
+                  "old": "",
+                  "new": "so much"
                 }
               }
             }
           },
           "key": {
-            "action": "unchanged",
+            "operation": "no_changed",
             "value": "value"
           },
           "ops": {
-            "action": "added",
+            "operation": "added",
             "value": "vops"
           }
         }
@@ -59,32 +59,32 @@
     }
   },
   "group1": {
-    "action": "nested",
+    "operation": "children",
     "value": {
       "baz": {
-        "action": "updated",
+        "operation": "updated",
         "value": {
-          "old entry": "bas",
-          "new entry": "bars"
+          "old": "bas",
+          "new": "bars"
         }
       },
       "foo": {
-        "action": "unchanged",
+        "operation": "no_changed",
         "value": "bar"
       },
       "nest": {
-        "action": "updated",
+        "operation": "updated",
         "value": {
-          "old entry": {
+          "old": {
             "key": "value"
           },
-          "new entry": "str"
+          "new": "str"
         }
       }
     }
   },
   "group2": {
-    "action": "deleted",
+    "operation": "deleted",
     "value": {
       "abc": 12345,
       "deep": {
@@ -93,7 +93,7 @@
     }
   },
   "group3": {
-    "action": "added",
+    "operation": "added",
     "value": {
       "deep": {
         "id": {

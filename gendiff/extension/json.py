@@ -26,4 +26,4 @@ def get_dict(diff_lst):
                 'operation': operation,
                 'value': value})
 
-        return result
+    return result

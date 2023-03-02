@@ -21,10 +21,10 @@ file2_tree_yaml = path.join(path.dirname("./tests/fixtures/"),
 '''Expected'''
 result_stylish = str(path.join(path.dirname("./tests/fixtures/expected/"),
                                "stylish.txt"))
-result_json = str(path.join(path.dirname("./tests/fixtures/expected/"),
-                            "json.txt"))
 result_plain = str(path.join(path.dirname("./tests/fixtures/expected/"),
                              "plain.txt"))
+result_json = str(path.join(path.dirname("./tests/fixtures/expected/"),
+                            "json.txt"))
 result_stylish_tree = str(path.join(path.dirname("./tests/fixtures/expected/"),
                                     "tree_stylish.txt"))
 result_plain_tree = str(path.join(path.dirname("./tests/fixtures/expected/"),

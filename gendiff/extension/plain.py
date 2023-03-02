@@ -2,9 +2,10 @@ import json
 
 
 def get_plain(diff, path=""):
-    result = ''
+    result = ""
     for item in diff:
-        key, value = item["key"], get_readability(item["value"])
+        key = item["key"]
+        value = get_readability(item["value"])
         operation = item["operation"]
         if operation == "children":
             result += get_plain(value, path=path + f"{key}.") + "\n"
@@ -17,7 +18,7 @@ def get_plain(diff, path=""):
             result += f"Property '{path}{key}' was updated. "
             result += f"From {value[0]} to {value[1]}\n"
 
-        return result.strip()
+    return result.strip()
 
 
 def get_readability(raw_data):

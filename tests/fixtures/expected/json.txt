@@ -1,25 +1,25 @@
 {
   "follow": {
-    "action": "deleted",
+    "operation": "deleted",
     "value": false
   },
   "host": {
-    "action": "unchanged",
+    "operation": "no_changed",
     "value": "hexlet.io"
   },
   "proxy": {
-    "action": "deleted",
+    "operation": "deleted",
     "value": "123.234.53.22"
   },
   "timeout": {
-    "action": "updated",
+    "operation": "updated",
     "value": {
-      "old entry": 50,
-      "new entry": 20
+      "old": 50,
+      "new": 20
     }
   },
   "verbose": {
-    "action": "added",
+    "operation": "added",
     "value": true
   }
 }
