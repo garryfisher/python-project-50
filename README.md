@@ -8,13 +8,13 @@ This is a learning project from the Python developer track, Hexlet Online School
 The program compares two file formats: json, yaml, yml including those with nested structure and outputs the difference.
 
 <h2>Installation</h2>
-1. Clone repository
-git clone https://github.com/garryfisher/python-project-50.git
-2. Go to the python-project-50 directory
-cd python-project-50
-3. Poetry is needed to build the package. 
-make build
-4. To install the package run the make package-install command
+  1. Clone repository
+    <b>git clone https://github.com/garryfisher/python-project-50.git</b>
+  2. Go to the python-project-50 directory
+    <b>cd python-project-50</b>
+  3. Poetry is needed to build the package. 
+    <b>make build</b>
+  4. To install the package run the <b>make package-install</b> command
 
 <a href="https://codeclimate.com/github/garryfisher/python-project-50/maintainability"><img src="https://api.codeclimate.com/v1/badges/df0c9295986e60cf71d0/maintainability" /></a>
 <a href="https://codeclimate.com/github/garryfisher/python-project-50/test_coverage"><img src="https://api.codeclimate.com/v1/badges/df0c9295986e60cf71d0/test_coverage" /></a>
